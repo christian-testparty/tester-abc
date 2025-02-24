@@ -19,7 +19,6 @@ jobs:
             [
               "https://example.com/cart",
               "https://example.com/store",
-              "https://example.com/contact",
               "https://example.com/product-list",
               "https://example.com/about",
               "https://example.com"
