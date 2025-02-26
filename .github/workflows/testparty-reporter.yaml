@@ -17,6 +17,7 @@ jobs:
           repository_id: ${{ github.repository_id }}
           urls: |
             [
+              "https://example-domains.com/cart",
               "https://example-domains.com/store",
               "https://example-domains.com/product-list",
               "https://example-domains.com/about",
