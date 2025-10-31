@@ -10,22 +10,63 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: TestParty Reporter
-        uses: ./
+        uses: test-party/reporter@v0.0.1-alpha.5
         with:
           testparty_token: ${{ secrets.TESTPARTY_TOKEN }}
           repository_name: ${{ github.repository }}
           repository_id: ${{ github.repository_id }}
           urls: |
-            [
-              "https://example.com/careers",
-              "https://example.com/team",
-              "https://example.com/cart",
-              "https://example.com/store",
-              "https://example.com/product-list",
-              "https://example.com/about",
-              "https://example.com"
-            ]
-          setups: |
+              [
+                {
+                  "url": "https://example-domains.com/laropfkaopfkklsdmfasnfjknasdkjfnajksdnfklaskldcaklsdjjnasdjfnaskdfaklsdklasdcl;kasd;lasdlfas",
+                  "steps": []
+                },
+                {
+                  "url": "https://example-domains.com/test",
+                  "steps": []
+                },
+                {
+                  "url": "https://example-domains.com/cart",
+                  "steps": []
+                },
+                {
+                  "url": "https://example-domains.com/store",
+                  "steps": []
+                },
+                {
+                  "url": "https://example-domains.com/product-list",
+                  "steps": []
+                },
+                {
+                  "url": "https://example-domains.com/about",
+                  "steps": [
+                    {
+                      "type": "button",
+                      "scanAfterAction": false,
+                      "selector": {
+                        "type": "id",
+                        "buttonType": "test"
+                      },
+                      "text": ""
+                    },
+                    {
+                      "type": "input",
+                      "credential": null,
+                      "scanAfterAction": true,
+                      "value": "christian@email.com",
+                      "selector": {
+                        "type": "type",
+                        "inputType": "input"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "url": "https://example-domains.com",
+                  "steps": []
+                }
+              ]
+          setup: |
             []
-          teardowns: |
+          teardown: |
             []
